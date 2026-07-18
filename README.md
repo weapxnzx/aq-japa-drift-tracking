@@ -1,6 +1,6 @@
 # Online Learning for Correlated Data Streams under Concept Drift
 
-This repository contains the Python simulation framework to evaluate the performance of a redesigned **Adaptive q-calculus-based Joint Affine Projection Algorithm (aq-JAPA)** against the standard **Affine Projection Algorithm (APA)**.
+The repository compares the classical Affine Projection Algorithm (APA) with an adaptive Jackson-regularized variant (aq-JAPA) on controlled, highly correlated and spatially heteroscedastic AR(1) streams.
 
 The framework specifically models a "favorable regime" for q-calculus adaptive filters: tracking non-stationary systems subject to abrupt shrinkage concept drifts, where the input data streams are highly correlated and possess heteroscedastic spatial energies.
 
@@ -33,6 +33,26 @@ The simulation script builds a heavily ill-conditioned environment to test the l
 
 ## How to Run
 
+
+## Installation
+
+Python 3.10 or newer is recommended.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate          # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+For tests:
+
+```bash
+python -m pip install -r requirements-dev.txt
+pytest -q
+```
+
+
 ### Dependencies
 Ensure you have the following Python packages installed:
 * `numpy`
@@ -42,4 +62,4 @@ Ensure you have the following Python packages installed:
 Run the main script to execute the Monte Carlo simulations and generate the comparative figures:
 
 ```bash
-python run_experiment.py
+python aq_japa_simulation.py
