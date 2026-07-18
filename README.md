@@ -33,33 +33,50 @@ The simulation script builds a heavily ill-conditioned environment to test the l
 
 ## How to Run
 
-
-## Installation
+### Installation
 
 Python 3.10 or newer is recommended.
 
+Create and activate a virtual environment:
+
 ```bash
 python -m venv .venv
-source .venv/bin/activate          # Windows PowerShell: .venv\Scripts\Activate.ps1
+```
+
+On Linux or macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Install the required dependencies:
+
+```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-For tests:
-
-```bash
-python -m pip install -r requirements-dev.txt
-pytest -q
-```
-
-
-### Dependencies
-Ensure you have the following Python packages installed:
-* `numpy`
-* `matplotlib`
-
 ### Execution
-Run the main script to execute the Monte Carlo simulations and generate the comparative figures:
+
+Run the main script to execute the Monte Carlo simulations, print the numerical results, and display the comparative figures:
 
 ```bash
 python aq_japa_simulation.py
+```
+
+The script displays three figures interactively. Close each figure window to allow the program to continue to the next one.
+
+### Dependencies
+
+The implementation requires:
+
+* NumPy
+* Matplotlib
+
+The exact supported version ranges are listed in `requirements.txt`.
